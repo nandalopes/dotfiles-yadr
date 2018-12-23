@@ -116,7 +116,7 @@ def install_homebrew
     run %{brew bundle install}
   end
   run %{pip3 install tmuxp}
-  run %{pip3 install neovim} # For NeoVim plugins
+  run %{pip3 install --user neovim} # For NeoVim plugins
   run %{gem install neovim} # For NeoVim plugins
   puts
   puts
