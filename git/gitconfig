@@ -121,6 +121,7 @@
   autocrlf = false
   editor = nvim
   excludesfile = ~/.yadr/git/gitignore
+  attributesFile = ~/.yadr/git/gitattributes
 [advice]
   statusHints = false
 [diff]
@@ -129,6 +130,8 @@
   mnemonicprefix = true
   algorithm = patience
   compactionHeuristic = true
+[diff "spaceman-diff"]
+  command = "spaceman-diff"
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
