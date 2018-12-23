@@ -22,6 +22,10 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('{vim,vimrc}'))
   run %{ mkdir -p ~/.config/nvim }
   run %{ ln -nfs ~/.yadr/nvim ~/.config/nvim }
+
+  run %{ mkdir -p ~/.config/ranger }
+  run %{ ln -nfs ~/.yadr/ranger ~/.config/ranger }
+
   run %{ touch ~/.hushlogin }
 
   Rake::Task["install_prezto"].execute
