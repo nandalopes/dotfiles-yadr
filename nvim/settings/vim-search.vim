@@ -22,9 +22,9 @@ vnoremap K :<C-U>execute 'Rg "' . GetVisual() . '"'<CR>
 " open up a ripgrep line, with a quote started for the search
 "
 " Mnemonic: *f*ind in *a*ll files. Or *F*ind *A*nywhere.
-nnoremap <leader>fa :Rg --smart-case ""<left>
+nnoremap <leader>fa :Rg ""<left>
 " Mnemonic: *f*ind *f*iles.
-nnoremap <leader>ff :Rg --smart-case --files ""<Left>
+nnoremap <leader>ff :Rg --files ""<Left>
 " Mnemonic: *f*ind usages of *t*his file
 nnoremap <leader>ft :exec "Rg " . expand("%:t:r")<CR>
 

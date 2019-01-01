@@ -3,7 +3,7 @@ if exists("g:ctrlp_user_command")
 endif
 if executable('rg')
   " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'rg --files --smart-case %s'
+  let g:ctrlp_user_command = 'rg --files %s'
 
   " rg is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
