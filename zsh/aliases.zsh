@@ -48,6 +48,7 @@ alias gar="killall -HUP -u \"$USER\" zsh"  #global alias reload
 # nvim using
 alias vim="nvim"
 alias v="nvim"
+alias vf='nvim $(fzf)'
 
 # mimic vim functions
 alias :q='exit'
