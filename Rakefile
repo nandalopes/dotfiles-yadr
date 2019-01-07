@@ -20,6 +20,8 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   install_files(Dir.glob('{vim,vimrc}'))
+  install_files(Dir.glob('zsh/zshrc'))
+
   run %{ mkdir -p ~/.config/nvim }
   run %{ ln -nfs ~/.yadr/nvim ~/.config/nvim }
 
@@ -158,11 +160,16 @@ def install_prezto
   run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
 
   # The prezto runcoms are only going to be installed if zprezto has never been installed
-  install_files(Dir.glob('zsh/prezto/runcoms/z*'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zlogin'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zlogout'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zpreztorc'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zprofile'), :symlink)
+  install_files(Dir.glob('zsh/prezto/runcoms/zshenv'), :symlink)
 
   puts
   puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
   run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
+  run %{ ln -s ~/.zprezto/modules/prompt/external/powerlevel9k/powerlevel9k.zsh-theme ~/.zprezto/modules/prompt/functions/prompt_powerlevel9k_setup }
 
   puts
   puts "Creating directories for your customizations"
@@ -214,18 +221,6 @@ def install_files(files, method = :symlink)
       run %{ ln -nfs "#{source}" "#{target}" }
     else
       run %{ cp -f "#{source}" "#{target}" }
-    end
-
-    # Temporary solution until we find a way to allow customization
-    # This modifies zshrc to load all of yadr's zsh extensions.
-    # Eventually yadr's zsh extensions should be ported to prezto modules.
-    source_config_code = "for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file"
-    if file == 'zshrc'
-      File.open(target, 'a+') do |zshrc|
-        if zshrc.readlines.grep(/#{Regexp.escape(source_config_code)}/).empty?
-          zshrc.puts(source_config_code)
-        end
-      end
     end
 
     puts "=========================================================="
