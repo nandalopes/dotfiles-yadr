@@ -13,7 +13,7 @@ Plug 'jby/tmux.vim' " Syntax for tmux files
 Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
 Plug 'lfilho/cosco.vim' "VIM colon and semicolon insertion bliss Edit
 Plug 'mattn/webapi-vim' " web api for vim. Required by some plugins
-Plug 'sjl/gundo.vim' " visualize your Vim undo tree
+Plug 'mbbill/undotree' " visualize your Vim undo tree
 Plug 'szw/vim-maximizer' "Maximizes and restores the current window
 Plug 'tommcdo/vim-exchange' " Easy text exchange operator
 Plug 'tomtom/tcomment_vim' " universal comment handling
