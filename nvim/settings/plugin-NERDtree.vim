@@ -19,3 +19,7 @@ endfunction
 nnoremap <leader>p :NERDTreeToggle<CR>
 " Open or close a NERDTree window in the current file node:
 nnoremap <leader>P :call OpenNerdTree()<CR>
+
+" When using DevIcons, we want to remove the pre padding.
+" If we stop using DevIcons, make the following a single space.
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''

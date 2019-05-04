@@ -6,3 +6,5 @@ Plug 'morhetz/gruvbox' " My current favorite colorscheme
 Plug 'w0ng/vim-hybrid' " Another favorite colorscheme
 Plug 'xsunsmile/showmarks' "visual representation of the location marks
 Plug 'nathanaelkane/vim-indent-guides' " Visual representation of indentation levels
+Plug 'ryanoasis/vim-devicons' " Icons on NERDTree, Denite, Lightline, etc
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
