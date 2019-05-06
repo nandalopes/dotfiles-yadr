@@ -10,23 +10,8 @@ function! GetVisual()
   return selection
 endfunction
 
-"grep the current word using
-"Mnemonic: *K*urrent
-nnoremap <silent> K :Rg <cword><CR>
-
-"grep the current visual selection
-"Mnemonic: *K*urrent
-vnoremap K :<C-U>execute 'Rg "' . GetVisual() . '"'<CR>
-
 " File search mappings:
-" open up a ripgrep line, with a quote started for the search
-"
-" Mnemonic: *f*ind in *a*ll files. Or *F*ind *A*nywhere.
-nnoremap <leader>fa :Rg ""<left>
-" Mnemonic: *f*ind *f*iles.
-nnoremap <leader>ff :Rg --files ""<Left>
-" Mnemonic: *f*ind usages of *t*his file
-nnoremap <leader>ft :exec "Rg " . expand("%:t:r")<CR>
+" Please check plugin-denite.vim for file searching mappings
 
 set wrapscan        " Search wrap the file
 set showmatch

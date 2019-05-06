@@ -18,6 +18,8 @@ let g:lightline = {
    \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
 \ }
 
+call denite#custom#option('default', 'statusline', v:false)
+
 function! MyModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
@@ -29,7 +31,7 @@ endfunction
 function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'denite' ? denite#get_status('mode') :
         \  &ft == 'vimshell' ? vimshell#get_status_string() :
         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
         \ ('' != MyModified() ? ' ' . MyModified() : '')
@@ -59,5 +61,11 @@ function! MyFileencoding()
 endfunction
 
 function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
+  if &ft == 'denite'
+    let mode_str = substitute(denite#get_status_mode(), "-\\| ", "", "g")
+    call lightline#link(tolower(mode_str[0]))
+    return mode_str
+  else
+    return winwidth('.') > 60 ? lightline#mode() : ''
+  endif
 endfunction
