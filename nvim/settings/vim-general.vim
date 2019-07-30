@@ -1,6 +1,4 @@
-set relativenumber nonumber
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber  nonumber
+set relativenumber number
 
 set diffopt+=vertical
 set clipboard+=unnamedplus

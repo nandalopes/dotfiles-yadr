@@ -1,4 +1,4 @@
-" try
+try
 
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
@@ -17,6 +17,7 @@ endfunction
 
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
+  setlocal nonumber norelativenumber
   inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
   inoremap <silent><buffer><expr> <C-d> denite#do_map('do_action', 'delete')
   inoremap <silent><buffer><expr> <C-p> denite#do_map('do_action', 'preview')
@@ -67,8 +68,8 @@ let s:denite_options.default = {
 \ 'highlight_mode_normal': 'CursorLine',
 \ 'highlight_prompt': 'Identifier',
 \ 'highlight_matched_char': 'Search',
-\ 'highlight_matched_range': 'Normal',
-\ 'highlight_filter_background': 'NormalFloat',
+\ 'highlight_matched_range': 'NormalFloat',
+\ 'highlight_filter_background': 'String',
 \ 'highlight_window_background': 'NormalFloat',
 \ 'smartcase': v:true,
 \ 'start_filter': v:true,
@@ -101,6 +102,6 @@ vnoremap <leader>ft :<C-U>exec 'Denite -input="' . expand("%:t:r") . '" grep:. -
 vnoremap <leader>j :<C-U>exec 'Denite -input="' . GetVisual() . '" grep:. -no-start-filter'<CR>
 nnoremap <leader>j :<C-U>DeniteCursorWord grep:. -no-start-filter<CR>
 
-" catch
-"   echo 'Denite not installed. It should work after running :PlugInstall'
-" endtry
+catch
+  echo 'Denite not installed. It should work after running :PlugInstall'
+endtry
