@@ -1,4 +1,34 @@
-try
+" try
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> s denite#do_map('do_action', 'splitswitch')
+  nnoremap <silent><buffer><expr> v denite#do_map('do_action', 'vsplitswitch')
+  nnoremap <silent><buffer><expr> t denite#do_map('do_action', 'tabswitch')
+  nnoremap <silent><buffer><expr> o denite#do_map('do_action', 'switch')
+  nnoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+endfunction
+
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+  inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+  inoremap <silent><buffer><expr> <C-d> denite#do_map('do_action', 'delete')
+  inoremap <silent><buffer><expr> <C-p> denite#do_map('do_action', 'preview')
+  inoremap <silent><buffer><expr> <C-s> denite#do_map('do_action', 'splitswitch')
+  inoremap <silent><buffer><expr> <C-v> denite#do_map('do_action', 'vsplitswitch')
+  inoremap <silent><buffer><expr> <C-t> denite#do_map('do_action', 'tabswitch')
+  inoremap <silent><buffer><expr> <C-o> denite#do_map('do_action', 'switch')
+  inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+  call deoplete#custom#buffer_option('auto_complete', v:false)
+  imap <silent><buffer> <ESC> <Plug>(denite_filter_quit)
+endfunction
+
 " Use ripgrep for searching current directory for files
 " By default, ripgrep will respect rules in .gitignore
 "   --files: Print each file that would be searched (but don't search)
@@ -27,26 +57,24 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#var('buffer', 'date_format', '')
 
 " Custom options for Denite
-"   auto_resize             - Auto resize the Denite window height automatically.
-"   prompt                  - Customize denite prompt
-"   direction               - Specify Denite window direction as directly below current pane
-"   winminheight            - Specify min height for Denite window
-"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
-"   prompt_highlight        - Specify color of prompt
-"   highlight_matched_char  - Matched characters highlight
-"   highlight_matched_range - matched range highlight
-let s:denite_options = {'default' : {
+let s:denite_options = {}
+let s:denite_options.default = {
 \ 'auto_resize': 1,
 \ 'prompt': '➜ ',
-\ 'direction': 'rightbelow',
-\ 'winminheight': '10',
+\ 'direction': 'dynamicbottom',
 \ 'split': 'floating',
-\ 'highlight_mode_insert': 'Directory',
+\ 'highlight_mode_insert': 'Underline',
 \ 'highlight_mode_normal': 'CursorLine',
-\ 'prompt_highlight': 'Identifier',
-\ 'highlight_matched_char': 'Function',
-\ 'highlight_matched_range': 'Normal'
-\ }}
+\ 'highlight_prompt': 'Identifier',
+\ 'highlight_matched_char': 'Search',
+\ 'highlight_matched_range': 'Normal',
+\ 'highlight_filter_background': 'NormalFloat',
+\ 'highlight_window_background': 'NormalFloat',
+\ 'smartcase': v:true,
+\ 'start_filter': v:true,
+\ 'statusline': v:false,
+\ 'default_action': 'switch'
+\ }
 
 " Loop through denite options and enable them
 function! s:profile(opts) abort
@@ -61,18 +89,18 @@ call s:profile(s:denite_options)
 
 " MAPPINGS:
 " Mnemonic: *F*ind *F*iles
-nnoremap <leader>ff :Denite file/rec -winrow=1<CR>
+nnoremap <leader>ff :Denite file/rec<CR>
 " Mnemonic: *F*ind *B*uffers
-nnoremap <leader>fb :Denite buffer -winrow=1<CR>
+nnoremap <leader>fb :Denite buffer<CR>
 " Mnemonic: *F*ind by *G*reping
-nnoremap <leader>fg :<C-U>Denite grep:. -no-empty -mode=normal -source-names=short<CR>
+nnoremap <leader>fg :<C-U>Denite grep:. -no-empty -source-names=short<CR>
 " Mnemonic: *F*ind usages of *T*his file
-vnoremap <leader>ft :<C-U>exec 'Denite -input="' . expand("%:t:r") . '" grep:. -mode=normal'<CR>
+vnoremap <leader>ft :<C-U>exec 'Denite -input="' . expand("%:t:r") . '" grep:. -no-start-filter'<CR>
 
 "Mnemonic: `j` is like clicking a link (down).
-vnoremap <leader>j :<C-U>exec 'Denite -input="' . GetVisual() . '" grep:. -mode=normal'<CR>
-nnoremap <leader>j :<C-U>DeniteCursorWord grep:. -mode=normal<CR>
+vnoremap <leader>j :<C-U>exec 'Denite -input="' . GetVisual() . '" grep:. -no-start-filter'<CR>
+nnoremap <leader>j :<C-U>DeniteCursorWord grep:. -no-start-filter<CR>
 
-catch
-  echo 'Denite not installed. It should work after running :PlugInstall'
-endtry
+" catch
+"   echo 'Denite not installed. It should work after running :PlugInstall'
+" endtry
