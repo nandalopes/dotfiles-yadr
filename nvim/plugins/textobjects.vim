@@ -1,5 +1,4 @@
 Plug 'austintaylor/vim-indentobject'
-Plug 'coderifous/textobj-word-column.vim'
 Plug 'kana/vim-textobj-datetime'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'

@@ -1,6 +1,9 @@
+" This line prevents polyglot from loading markdown packages.
+let g:polyglot_disabled = ['md', 'markdown']
+
 augroup markdown
     au!
-    let g:markdown_fenced_languages = ['java', 'coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+    let g:markdown_fenced_languages = ['shell=sh', 'bash=sh', 'sh', 'viml=vim', 'java', 'coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
     " Assumes you have `vmd` installed on your system
     command! MarkdownPreview :!vmd %

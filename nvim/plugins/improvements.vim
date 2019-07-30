@@ -16,8 +16,7 @@ Plug 'mattn/webapi-vim' " web api for vim. Required by some plugins
 Plug 'mbbill/undotree' " visualize your Vim undo tree
 Plug 'szw/vim-maximizer' "Maximizes and restores the current window
 Plug 'tommcdo/vim-exchange' " Easy text exchange operator
-Plug 'tomtom/tcomment_vim' " universal comment handling
-Plug 'tomtom/tlib_vim' " Utility functions used by some plugins
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish' " search for, substitute, and abbreviate multiple variants of a word
 Plug 'tpope/vim-endwise' " wisely add `end` in ruby, endfunction/endif/more in vim script, etc
 Plug 'tpope/vim-ragtag' " mappings for HTML, XML, PHP, ASP, eRuby, JSP, etc
