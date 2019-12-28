@@ -43,9 +43,10 @@ set linebreak "Wrap lines at convenient points
 
 " ================ Folds ============================
 
-set foldmethod=indent "fold based on indent
-set foldnestmax=3     "deepest fold is 3 levels
-set nofoldenable      "dont fold by default
+set foldenable
+set foldmethod=manual "fold based on indent
+set foldlevelstart=10 "Open most of the folds by default. If set to 0, all folds will be closed.
+set foldnestmax=10 "Folds can be nested. Setting a max value protects you from too many folds.
 
 " ================ Completion =======================
 
