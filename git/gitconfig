@@ -103,7 +103,7 @@
   prompt = false
   keepBackup = false
 [mergetool "vimdiff"]
-  cmd="nvim -d -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
+  cmd="nvim -d -c 'Gvdiffsplit' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
 [merge]
   summary = true
