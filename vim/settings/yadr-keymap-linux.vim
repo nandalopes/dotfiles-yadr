@@ -71,5 +71,9 @@ nnoremap <C-Right>  <C-w>>
 nmap <A-A> :Tabularize /
 vmap <A-A> :Tabularize /
 
+" highlight all occurrences of current word
+" (similar to regular * except doesn't move)
+map <silent> <A-*> *N
+
 " Source current file Alt-% (good for vim development)
 map <A-%> :so %<CR>
