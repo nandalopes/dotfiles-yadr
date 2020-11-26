@@ -31,7 +31,8 @@ nnoremap <silent> ,t :CtrlP<CR>
 nnoremap <silent> ,b :CtrlPBuffer<cr>
 
 " Cmd-Shift-P to clear the cache
-nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
+"nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
+nnoremap <silent> <A-P> :ClearCtrlPCache<cr>
 
 " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " Open CtrlP starting from a particular path, making it much
@@ -54,4 +55,5 @@ map ,jT :CtrlP test<CR>
 
 "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
 "Ctrl-m is not good - it overrides behavior of Enter
-nnoremap <silent> <D-M> :CtrlPBufTag<CR>
+"nnoremap <silent> <D-M> :CtrlPBufTag<CR>
+nnoremap <silent> <A-M> :CtrlPBufTag<CR>
