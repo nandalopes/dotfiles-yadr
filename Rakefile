@@ -3,6 +3,7 @@ require 'fileutils'
 require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
 $is_macos = RUBY_PLATFORM.downcase.include?("darwin")
+$is_linux = RUBY_PLATFORM.downcase.include?("linux")
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
@@ -185,7 +186,7 @@ def install_fonts
   puts "Installing patched fonts for Powerline/Lightline."
   puts "======================================================"
   run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts } if $is_macos
-  run %{ mkdir -p ~/.fonts && cp ~/.yadr/fonts/* ~/.fonts && fc-cache -vf ~/.fonts } if RUBY_PLATFORM.downcase.include?("linux")
+  run %{ mkdir -p ~/.fonts && cp ~/.yadr/fonts/* ~/.fonts && fc-cache -vf ~/.fonts } if $is_linux
   puts
 end
 
