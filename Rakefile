@@ -186,8 +186,12 @@ def install_fonts
   puts "======================================================"
   puts "Installing patched fonts for Powerline/Lightline."
   puts "======================================================"
-  run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts } if $is_macos
-  run %{ mkdir -p ~/.fonts && cp ~/.yadr/fonts/* ~/.fonts && fc-cache -vf ~/.fonts } if $is_linux
+  run %{ ln -nfs $HOME/.yadr/fonts $HOME/Library/Fonts/yadr-fonts } if $is_macos
+  run %{
+    mkdir -p $HOME/.fonts
+    ln -nfs $HOME/.yadr/fonts $HOME/.fonts/yadr-fonts
+    fc-cache -vf $HOME/.fonts
+  } if $is_linux
   puts
 end
 
