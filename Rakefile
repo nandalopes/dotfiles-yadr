@@ -14,7 +14,7 @@ task :install => [:submodule_init, :submodules] do
   puts
 
   install_homebrew if $is_macos
-  install_rvm_binstubs
+  install_rvm_binstubs if want_to_install?('rvm binstubs (bundle exec)')
 
   # this has all the runcoms from this directory.
   install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
@@ -28,6 +28,8 @@ task :install => [:submodule_init, :submodules] do
     install_files(Dir.glob('gvimrc')) if $is_linux
     Rake::Task["install_vundle"].execute
   end
+
+  run %{ touch ~/.hushlogin }
 
   Rake::Task["install_prezto"].execute
 
