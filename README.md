@@ -192,6 +192,7 @@ of plugins above to learn more.
  * `,k` - Search the current word under the cursor and show results in quickfix window
  * `,K` - Grep the current word up to next exclamation point (useful for ruby foo! methods)
  * `Cmd-*` - highlight all occurrences of current word (similar to regular `*` except doesn't move)
+ (`Alt` in Linux)
  * `,hl` - toggle search highlight on and off
  * `,gg` or `,ag` - Grep command line, type between quotes. Uses Ag Silver Searcher.
  * After searching with `,gg` you can navigate the results with `Ctrl-x` and `Ctrl-z` (or standard vim `:cn` and `:cp`)
@@ -214,6 +215,7 @@ of plugins above to learn more.
  * `Cmd-Shift-N` - NERDTree toggle (`Alt` in Linux)
  * `Ctrl-\` - Show current file in NERDTree
  * `Cmd-Shift-P` - Clear CtrlP cache
+ (`Alt` in Linux)
 
 #### Better keystrokes for common editing commands
 
