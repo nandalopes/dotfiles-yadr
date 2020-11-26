@@ -1,1 +1,1 @@
-set guifont=Inconsolata-dz\ for\ Powerline\ 11
+set guifont=Fira\ Code\ Nerd\ Font\ Mono\ 11
