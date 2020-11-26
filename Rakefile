@@ -42,9 +42,46 @@ task :install => [:submodule_init, :submodules] do
   success_msg("installed")
 end
 
+task :remove do
+  puts
+  puts "======================================================"
+  puts "So long, thanks YADR."
+  puts "======================================================"
+  puts
+
+  # this has all the runcoms from this directory.
+  remove_files(Dir.glob('git/*')) if want_to_remove?('git configs (color, aliases)')
+  remove_files(Dir.glob('irb/*')) if want_to_remove?('irb/pry configs (more colorful)')
+  remove_files(Dir.glob('ruby/*')) if want_to_remove?('rubygems config (faster/no docs)')
+  remove_files(Dir.glob('ctags/*')) if want_to_remove?('ctags config (better js/ruby support)')
+  remove_files(Dir.glob('tmux/*')) if want_to_remove?('tmux config')
+  remove_files(Dir.glob('vimify/*')) if want_to_remove?('vimification of command line tools')
+  if want_to_remove?('vim configuration (highly recommended)')
+    remove_files(Dir.glob('{vim,vimrc}'))
+  end
+
+  Rake::Task["remove_prezto"].execute
+
+  success_msg("removed")
+end
+
 task :install_prezto do
   if want_to_install?('zsh enhancements & prezto')
     install_prezto
+  end
+end
+
+task :remove_prezto do
+  if want_to_remove?('zsh enhancements & prezto')
+    remove_files(Dir.glob('zsh/prezto-override/zpreztorc'), :symlink)
+    remove_files(Dir.glob('zsh/zshrc'), :symlink)
+    remove_files(Dir.glob('zsh/prezto/runcoms/zlogin'), :symlink)
+    remove_files(Dir.glob('zsh/prezto/runcoms/zlogout'), :symlink)
+    remove_files(Dir.glob('zsh/prezto/runcoms/zpreztorc'), :symlink)
+    remove_files(Dir.glob('zsh/prezto/runcoms/zprofile'), :symlink)
+    remove_files(Dir.glob('zsh/prezto/runcoms/zshenv'), :symlink)
+
+    run %{ unlink "${ZDOTDIR:-$HOME}/.zprezto" }
   end
 end
 
