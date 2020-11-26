@@ -2,6 +2,8 @@ require 'rake'
 require 'fileutils'
 require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
 
+$is_macos = RUBY_PLATFORM.downcase.include?("darwin")
+
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
   puts
@@ -10,7 +12,7 @@ task :install => [:submodule_init, :submodules] do
   puts "======================================================"
   puts
 
-  install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
+  install_homebrew if $is_macos
   install_rvm_binstubs
 
   # this has all the runcoms from this directory.
@@ -29,7 +31,7 @@ task :install => [:submodule_init, :submodules] do
 
   install_fonts
 
-  install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
+  install_term_theme if $is_macos
 
   run_bundle_config
 
@@ -121,7 +123,7 @@ def run(cmd)
 end
 
 def number_of_cores
-  if RUBY_PLATFORM.downcase.include?("darwin")
+  if $is_macos
     cores = run %{ sysctl -n hw.ncpu }
   else
     cores = run %{ nproc }
@@ -182,7 +184,7 @@ def install_fonts
   puts "======================================================"
   puts "Installing patched fonts for Powerline/Lightline."
   puts "======================================================"
-  run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts } if RUBY_PLATFORM.downcase.include?("darwin")
+  run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts } if $is_macos
   run %{ mkdir -p ~/.fonts && cp ~/.yadr/fonts/* ~/.fonts && fc-cache -vf ~/.fonts } if RUBY_PLATFORM.downcase.include?("linux")
   puts
 end
