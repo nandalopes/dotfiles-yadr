@@ -394,6 +394,41 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
   run %{ defaults read com.googlecode.iterm2 }
 end
 
+def want_to_remove? (section)
+  if ENV["ASK"]=="true"
+    puts "Would you like to remove configuration files for: #{section}? [y]es, [n]o"
+    STDIN.gets.chomp == 'y'
+  else
+    true
+  end
+end
+
+def remove_files(files, method = :symlink)
+  files.each do |f|
+    file = f.split('/').last
+    source = "#{ENV["PWD"]}/#{f}"
+    target = "#{ENV["HOME"]}/.#{file}"
+
+    puts "======================#{file}=============================="
+    puts "Source: #{source}"
+    puts "Target: #{target}"
+
+    if File.exists?(target) && (!File.symlink?(target) || (File.symlink?(target) && File.readlink(target) != source))
+      puts "[Overwriting] #{target}...leaving original at #{target}.backup..."
+      run %{ mv "#{target}" "#{target}.backup" }
+    end
+
+    if method == :symlink
+      run %{ unlink "#{target}" }
+    else
+      run %{ mv "#{target}" "#{target}.save" }
+    end
+
+    puts "=========================================================="
+    puts
+  end
+end
+
 def success_msg(action)
   puts ""
   puts "   _     _           _         "
