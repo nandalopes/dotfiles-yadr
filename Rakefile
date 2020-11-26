@@ -25,6 +25,7 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
+    install_files(Dir.glob('gvimrc')) if $is_linux
     Rake::Task["install_vundle"].execute
   end
 
