@@ -1,10 +1,9 @@
 tap 'homebrew/bundle'
 tap 'homebrew/completions'
 tap 'homebrew/core'
-tap 'neovim/neovim'
 
 brew 'fasd'
-brew 'hub'
+brew 'gh'
 brew 'neovim'
 brew 'python3'
 brew 'ripgrep'

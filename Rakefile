@@ -11,7 +11,7 @@ task :install => [:submodule_init, :submodules] do
   puts "======================================================"
   puts
 
-  install_homebrew if $is_macos
+  install_homebrew
 
   # this has all the runcoms from this directory.
   install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
@@ -101,7 +101,14 @@ def install_homebrew
     puts "Installing Homebrew, the OSX package manager...If it's"
     puts "already installed, this will do nothing."
     puts "======================================================"
-    run %{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+    
+    if $is_macos
+      run %{bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"}
+    else
+      run %{yes | bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"}
+      run %{echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> ${HOME}/.profile}
+      run %{eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)}
+    end
   end
 
   puts
@@ -187,7 +194,14 @@ def install_prezto
         run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
       end
       run %{ sudo chsh -s /usr/local/bin/zsh $USER }
+    elsif File.exists?("/home/linuxbrew/.linuxbrew/bin/zsh")
+      if File.readlines("/etc/shells").grep("/home/linuxbrew/.linuxbrew/bin/zsh").empty?
+        puts "Adding zsh to standard shell list"
+        run %{ echo "/home/linuxbrew/.linuxbrew/bin/zsh" | sudo tee -a /etc/shells }
+      end
+      run %{ sudo chsh -s /home/linuxbrew/.linuxbrew/bin/zsh $USER }
     else
+      puts "Falling back to default/system zsh"
       run %{ chsh -s /bin/zsh }
     end
   end
