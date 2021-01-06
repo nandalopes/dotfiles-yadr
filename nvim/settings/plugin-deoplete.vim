@@ -1,14 +1,14 @@
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#enable_smart_case = 1
-
-if !exists('g:deoplete#keyword_patterns')
-  let g:deoplete#keyword_patterns = {}
-endif
-let g:deoplete#keyword_patterns.default = '\h\w*'
-let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
-
+call deoplete#custom#option({
+  \ 'auto_complete_delay': 200,
+  \ 'ignore_case': v:true,
+  \ 'camel_case': v:true,
+  \ 'smart_case': v:true,
+  \ 'keyword_patterns': {
+    \ 'default': '\h\w*',
+    \ 'tex': '\\?[a-zA-Z_]\w*'
+  \ }
+\ })
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
