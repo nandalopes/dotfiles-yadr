@@ -86,6 +86,7 @@
   uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
   filelog = log -u                  # show changes to a file
   mt = mergetool                    # fire up the merge tool
+  discard = checkout --patch        # discard changes chunk by chunk
 
   # stash
   ss = stash                        # stash changes
