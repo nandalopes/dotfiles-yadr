@@ -99,6 +99,8 @@
 
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message
+  tf = tag -f                       # overwrite existing tag
+  tD = tag --delete                 # delete existing tag
 
   # svn helpers
   svnr = svn rebase
