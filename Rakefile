@@ -22,7 +22,6 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('{vim,vimrc}'))
   install_files(Dir.glob('zsh/zshrc'))
 
-  run %{ mkdir -p ~/.config/nvim }
   run %{ ln -nfs ~/.yadr/nvim ~/.config/nvim }
 
   run %{ mkdir -p ~/.config/ranger }
