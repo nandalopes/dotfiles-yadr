@@ -13,6 +13,10 @@ let customSettingsPath = '~/.config/nvim/settings/before'
 " The mapleader has to be set before loading all the plugins.
 let mapleader=","
 
+" This line prevents polyglot from loading markdown packages and needs to be
+" defined before everything else
+let g:polyglot_disabled = ['md', 'markdown']
+
 for fpath in split(globpath(customSettingsPath, '*.vim'), '\n')
   if (fpath != expand(customSettingsPath) . "/main.vim") " skip main.vim (this file)
     exe 'source' fpath
