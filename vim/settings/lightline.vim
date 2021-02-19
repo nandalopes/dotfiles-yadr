@@ -17,7 +17,7 @@ function! MyReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "⭤ "
+    return " "
   else
     return ""
   endif
