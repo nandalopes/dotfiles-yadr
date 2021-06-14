@@ -1,3 +1,6 @@
+---
+nav_order: 5
+---
 ### Adding your own ZSH theme
 
 If you want to add your own zsh theme, you can place it in `~/.zsh.prompts` and it will automatically be picked up by the prompt loader.
