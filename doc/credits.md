@@ -1,3 +1,8 @@
+---
+title: Credits
+nav_order: 9
+---
+
 I can't take credit for all of this. The vim files are a combination of
 work by tpope, scrooloose, and many hours of scouring blogs, vimscripts,
 and other places for the cream of the crop of vim awesomeness.

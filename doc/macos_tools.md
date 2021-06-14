@@ -1,3 +1,9 @@
+---
+title: MacOS Tools
+# permalink: macos_tools
+nav_order: 8
+---
+
 ## Recommended OSX Tools
 
  * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/ - syncs with SimpleNote

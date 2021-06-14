@@ -1,3 +1,11 @@
+---
+title: Home
+nav_order: 1
+layout: navtoc
+h_min: 2
+h_max: 3
+---
+
      _     _           _
     | |   | |         | |
     | |___| |_____  __| | ____

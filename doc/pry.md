@@ -1,3 +1,8 @@
+---
+title: Pry
+nav_order: 7
+---
+
 ### Install the gem
 
 ```bash
