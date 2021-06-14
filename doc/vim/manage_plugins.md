@@ -1,3 +1,9 @@
+---
+title: Manage plugins
+parent: "Vim Settings"
+nav_order: 3
+---
+
 YADR comes with a dead simple plugin manager that just uses vundles and submodules, without any fancy config files.
 
 Add a plugin

@@ -1,3 +1,9 @@
+---
+title: "Vim Settings"
+has_children: true
+nav_order: 4
+---
+
 This directory contains settings for various vim plugins and vim itself.
 
 ## Plugin Settings

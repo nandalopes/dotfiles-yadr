@@ -1,3 +1,9 @@
+---
+title: Debug Vim Keymaps
+parent: "Vim Settings"
+nav_order: 1
+---
+
 The files in `vim/settings` are customizations stored on a per-plugin
 basis. The main keymap is available in yadr-keymap.vim, but some of the vim
 files contain key mappings as well.
