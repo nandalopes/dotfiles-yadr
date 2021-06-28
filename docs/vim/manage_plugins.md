@@ -10,7 +10,7 @@ Add a plugin
 
     yav -u https://github.com/airblade/vim-rooter
 
-Delete a plugin 
+Delete a plugin
 
     ydv -u airblade/vim-rooter
 
