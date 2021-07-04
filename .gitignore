@@ -1,5 +1,6 @@
 custom/zsh
 
+fonts/**/*.uuid
 vim/backups
 vim/view
 *un~
