@@ -95,13 +95,18 @@
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
   prompt = false
+  keepBackup=false
 [mergetool "mvimdiff"]
   cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
+[mergetool "gvimdiff"]
+  cmd="gvim -c 'Gvdiffsplit!' $MERGED"     # use fugitive.vim for 3-way merge
+[mergetool "vimdiff"]
+  cmd="vim -c 'Gvdiffsplit!' $MERGED"     # use fugitive.vim for 3-way merge
 [merge]
   summary = true
   verbosity = 1
-  tool = mvimdiff
+  tool = vimdiff
 [apply]
   whitespace = nowarn
 [branch]
