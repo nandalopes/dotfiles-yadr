@@ -27,6 +27,9 @@
 
   # branch
   b = branch -v                     # branch (verbose)
+  ren-remote = "!f() { git push origin origin/$1:refs/heads/$2 :$1; } ; f"
+  ren-local = branch -m
+  ren = !git ren-local $1 $2 && git ren-remote $1 $2
 
   # commit
   c = commit -m                     # commit with message
