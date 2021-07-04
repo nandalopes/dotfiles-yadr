@@ -26,6 +26,7 @@ task :install => [:submodule_init, :submodules] do
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
+    install_files(Dir.glob('gvimrc')) if $is_linux
   end
 
   Rake::Task["install_prezto"].execute
