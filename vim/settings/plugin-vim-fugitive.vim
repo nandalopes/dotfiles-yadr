@@ -1,3 +1,9 @@
+" vim-fugitive.git
+" ========================================
+" For vim-fugitive.git, dp means :diffput. Define dg to mean :diffget
+nnoremap <silent> <Leader>dg :diffget<CR>
+nnoremap <silent> <Leader>dp :diffput<CR>
+
 " The tree buffer makes it easy to drill down through the directories of your
 " git repository, but it’s not obvious how you could go up a level to the
 " parent directory. Here’s a mapping of .. to the above command, but
