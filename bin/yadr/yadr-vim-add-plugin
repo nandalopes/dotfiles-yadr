@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# 
+#
 require File.join(File.dirname(__FILE__), 'default_libs')
 require File.join(File.dirname(__FILE__), 'vimplug')
 
