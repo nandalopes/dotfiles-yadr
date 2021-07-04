@@ -96,6 +96,10 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+
+  # checkout remote head, via https://twitter.com/jnesselr/status/1334586152691625985
+  cdef = "!f() { git checkout $(git originhead ${1:-origin}); } ; f"
+  originhead = "!f() { git remote show ${1:-origin} | grep 'HEAD branch' | cut -d ' ' -f5; } ; f"
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
