@@ -6,7 +6,7 @@
     (_______\_____|\____|_|
 
     # Yet Another Dotfile Repo v1.1
-    # Now with Prezto and Vundle!
+    # Now with Prezto and Vim-Plug!
 
 #### This is a GNU/Linux focused fork of [skwp/dotfiles](https://github.com/skwp/dotfiles).
 
