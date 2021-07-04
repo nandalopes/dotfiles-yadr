@@ -13,8 +13,8 @@ task :install => [:submodule_init, :submodules] do
   puts "======================================================"
   puts
 
-  install_rvm_binstubs
   install_homebrew if $is_macos
+  install_rvm_binstubs if want_to_install?('rvm binstubs (bundle exec)')
 
   # this has all the runcoms from this directory.
   install_files(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
