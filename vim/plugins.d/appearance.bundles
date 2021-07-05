@@ -1,9 +1,12 @@
 Plug 'chrisbra/color_highlight'
-Plug 'skwp/vim-colors-solarized'
-Plug 'itchyny/lightline.vim'
-Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'    " Status line
+Plug 'jby/tmux.vim'             " tmux.conf syntax
 Plug 'xsunsmile/showmarks'
-Plug 'chriskempson/base16-vim'
 
 " Required for Gblame in terminal vim
 Plug 'godlygeek/csapprox'
+
+" Colorschemes
+Plug 'skwp/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
