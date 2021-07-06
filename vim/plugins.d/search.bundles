@@ -1,7 +1,7 @@
 Plug 'justinmk/vim-sneak'
-Plug 'henrik/vim-indexed-search'
-Plug 'nelstrom/vim-visual-star-search'
-Plug 'skwp/greplace.vim'
-Plug 'Lokaltog/vim-easymotion'
 "Plug 'rking/ag.vim' "Deprecated
 Plug 'mileszs/ack.vim'
+Plug 'google/vim-searchindex'
+Plug 'bronson/vim-visual-star-search'
+Plug 'yegappan/greplace'
+Plug 'easymotion/vim-easymotion'
