@@ -5,6 +5,7 @@ Plug 'jtratner/vim-flavored-markdown'
 Plug 'vim-syntastic/syntastic'
 Plug 'nelstrom/vim-markdown-preview'
 Plug 'skwp/vim-html-escape'
-Plug 'mxw/vim-jsx'
+"Plug 'mxw/vim-jsx' "Deprecated
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
 
