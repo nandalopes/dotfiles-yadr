@@ -10,6 +10,7 @@ vim/spell
 
 # Vim custom settings
 vim/settings/before/*.vim
+vim/settings/*.vim
 vim/settings/after/*.vim
 vim/after/.vimrc.after
 
