@@ -46,7 +46,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 
 # Install dotfiles
 COPY . /root/.yadr
-RUN cd /root/.yadr && rake install
+# RUN cd /root/.yadr && rake install
 
 # Run a zsh session
 CMD [ "/bin/zsh" ]
