@@ -1,9 +1,6 @@
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 "" Project and file nav
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
-"" Tag management
 Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
