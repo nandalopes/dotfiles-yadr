@@ -29,6 +29,8 @@ task :install => [:submodule_init, :submodules] do
     Rake::Task["install_plugins"].execute
   end
 
+  run %{ ln -nfs ~/.yadr/nvim ~/.config/nvim } if want_to_install?('nvim')
+
   Rake::Task["install_prezto"].execute
 
   install_fonts

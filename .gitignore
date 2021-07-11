@@ -21,3 +21,8 @@ vim/spell
 .netrwhist
 bin/subl
 tags
+nvim/.local.vim
+
+nvim/settings/**/*.vim
+!nvim/settings/before/main.vim
+!nvim/settings/after/main.vim
