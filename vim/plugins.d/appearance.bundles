@@ -6,6 +6,7 @@ Plug 'chrisbra/Colorizer'        " Show colors by code
 Plug 'godlygeek/csapprox'
 
 " Colorschemes
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'skwp/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'chriskempson/base16-vim'
