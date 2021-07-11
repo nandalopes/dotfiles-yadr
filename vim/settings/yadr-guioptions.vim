@@ -23,6 +23,14 @@ else
     set termguicolors
   end
 
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+  else
+    if $TERM == 'xterm'
+      set term=xterm-256color
+    endif
+  endif
+
   " For people using a terminal that is not Solarized
   if exists("g:yadr_using_unsolarized_terminal")
     let g:solarized_termcolors=256
