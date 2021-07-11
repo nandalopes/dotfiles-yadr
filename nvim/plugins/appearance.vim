@@ -2,6 +2,7 @@ Plug 'chrisbra/color_highlight' " Use `:ColorCodes` to see hex colors highlighte
 Plug 'chriskempson/base16-vim' " Famous base16 color schemes for your choosing
 Plug 'godlygeek/csapprox' " Required for Gblame in terminal vim
 Plug 'itchyny/lightline.vim' " Fancy Status bar
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox' " My current favorite colorscheme
 Plug 'w0ng/vim-hybrid' " Another favorite colorscheme
 Plug 'xsunsmile/showmarks' "visual representation of the location marks
