@@ -98,7 +98,7 @@ set smartcase       " ...unless we type a capital
 " ================ Formatting =======================
 set formatoptions+=j " Delete comment character when joining commented lines
 
-" ================ Security ==========================
-set modelines=0
-set nomodeline
+" ================ Modelines ==========================
+set modelines=10
+set modeline
 
