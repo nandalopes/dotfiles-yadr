@@ -6,7 +6,7 @@ set backspace=indent,eol,start " Allow backspace in insert mode
 set history=1000               " Store lots of :cmdline history
 set showcmd                    " Show incomplete cmds down the bottom
 set showmode                   " Show current mode down the bottom
-set gcr=a:blinkon0             " Disable cursor blink
+set guicursor=a:blinkon0       " Disable cursor blink
 set visualbell                 " No sounds
 set autoread                   " Reload files changed outside vim
 
@@ -22,7 +22,7 @@ syntax on
 
 set noswapfile
 set nobackup
-set nowb
+set nowritebackup
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
@@ -44,7 +44,7 @@ set tabstop=2
 set expandtab
 
 " Some file types use real tabs
-au FileType {make} set noexpandtab sw=4
+au FileType {make} set noexpandtab shiftwidth=4
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
