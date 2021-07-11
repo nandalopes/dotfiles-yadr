@@ -10,7 +10,7 @@ call yadr#SourceIfExists( "~/.vim/plugins.d/main.vim" )
 
 
 " Main Settings & Plugins Configuration
-call yadr#SourceIfExists( "~/.vim/settings.vim" )
+call yadr#SourceDirectory( "~/.vim/settings" )
 
 
 " Custom Settings: AFTER
