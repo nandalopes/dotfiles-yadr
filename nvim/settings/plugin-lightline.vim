@@ -1,5 +1,4 @@
 let g:lightline = {
-   \ 'colorscheme': 'gruvbox',
    \ 'mode_map': { 'c': 'NORMAL' },
    \ 'active': {
    \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
