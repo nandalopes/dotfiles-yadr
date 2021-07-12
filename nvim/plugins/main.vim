@@ -19,4 +19,10 @@ for fpath in split(globpath(pluginPath, '*.vim'), '\n')
   endif
 endfor
 
+" The plugins listed in ~/.config/nvim/.local.vim will be added here to
+" allow the user to add vim plugins to yadr without the need for a fork.
+if filereadable(expand("~/.yadr/nvim/.local.vim"))
+  source ~/.yadr/nvim/.local.vim
+endif
+
 call plug#end()
