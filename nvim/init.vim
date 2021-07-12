@@ -1,3 +1,6 @@
+" YADR lib
+source ~/.config/nvim/autoload/yadr.vim
+
 " Custom Settings: BEFORE
 source ~/.config/nvim/settings/before/main.vim
 
