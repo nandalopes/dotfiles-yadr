@@ -1,3 +1,7 @@
+if !LINUX()
+  finish
+endif
+
 " ========================================
 " Linux specific General vim sanity improvements
 " ========================================
@@ -27,10 +31,6 @@ nnoremap \( f(ci(
 nnoremap \) f)ci)
 nnoremap \[ f[ci[
 nnoremap \] f]ci]
-
-" ==== NERD tree
-" ,N for nerd tree
-nmap \N :NERDTreeToggle<CR>
 
 " move up/down quickly by using Alt-j, Alt-k
 " which will move us around by functions
@@ -75,16 +75,19 @@ nnoremap <C-Down> <C-w>-
 nnoremap <C-Left> <C-w><
 nnoremap <C-Right>  <C-w>>
 
-" ============================
-" Tabularize - alignment
-" ============================
-" Hit ,A then type a character you want to align by
-nmap <Leader>A :Tabularize /
-vmap <Leader>A :Tabularize /
-
 " highlight all occurrences of current word
 " (similar to regular * except doesn't move)
 map <silent> <A-*> *N
 
 " Source current file Alt-% or ,vr (good for vim development)
 map <A-%> :so %<CR>
+
+"" Wrappings
+vmap <A-d> gj
+vmap <A-k> gk
+vmap <A-$> g$
+vmap <A-0> g^
+nmap <A-d> gj
+nmap <A-k> gk
+nmap <A-$> g$
+nmap <A-0> g^

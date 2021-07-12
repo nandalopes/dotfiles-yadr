@@ -1,3 +1,7 @@
+if !OSX()
+  finish
+endif
+
 " ========================================
 " Mac specific General vim sanity improvements
 " ========================================
@@ -28,10 +32,6 @@ nnoremap <D-)> f)ci)
 nnoremap <D-[> f[ci[
 nnoremap <D-]> f]ci]
 
-" ==== NERD tree
-" Cmd-Shift-N for nerd tree
-nmap <D-N> :NERDTreeToggle<CR>
-
 " move up/down quickly by using Cmd-j, Cmd-k
 " which will move us around by functions
 nnoremap <silent> <D-j> }
@@ -42,10 +42,6 @@ autocmd FileType rspec map <buffer> <D-j> }
 autocmd FileType rspec map <buffer> <D-k> {
 autocmd FileType javascript map <buffer> <D-k> }
 autocmd FileType javascript map <buffer> <D-j> {
-
-" Command-/ to toggle comments
-map <D-/> :TComment<CR>
-imap <D-/> <Esc>:TComment<CR>i
 
 " Use numbers to pick the tab you want (like iTerm)
 map <silent> <D-1> :tabn 1<cr>
@@ -64,12 +60,17 @@ nnoremap <D-Down> <C-w>-
 nnoremap <D-Left> <C-w><
 nnoremap <D-Right>  <C-w>>
 
-" ============================
-" Tabularize - alignment
-" ============================
-" Hit Cmd-Shift-A then type a character you want to align by
-nmap <D-A> :Tabularize /
-vmap <D-A> :Tabularize /
-
 " Source current file Cmd-% (good for vim development)
 map <D-%> :so %<CR>
+
+" Wrappings
+vmap <D-j> gj
+vmap <D-k> gk
+vmap <D-$> g$
+vmap <D-^> g^
+vmap <D-0> g^
+nmap <D-j> gj
+nmap <D-k> gk
+nmap <D-$> g$
+nmap <D-^> g^
+nmap <D-0> g^
