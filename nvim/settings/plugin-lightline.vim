@@ -13,8 +13,8 @@ let g:lightline = {
    \   'fileencoding': 'MyFileencoding',
    \   'mode': 'MyMode',
    \ },
-   \ 'separator': { 'left': '⮀', 'right': '⮂' },
-   \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+   \ 'separator': { 'left': '', 'right': '' },
+   \ 'subseparator': { 'left': '', 'right': '' }
 \ }
 
 function! MyModified()
@@ -22,7 +22,7 @@ function! MyModified()
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
 endfunction
 
 function! MyFilename()
