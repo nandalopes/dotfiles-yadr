@@ -60,6 +60,10 @@ nnoremap <D-Down> <C-w>-
 nnoremap <D-Left> <C-w><
 nnoremap <D-Right>  <C-w>>
 
+
+" ,hp = html preview
+map <silent> <Leader>hp :!open -a Safari %<CR><CR>
+
 " Source current file Cmd-% (good for vim development)
 map <D-%> :so %<CR>
 
