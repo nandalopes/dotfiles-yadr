@@ -18,6 +18,11 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
+" Set cursor line
+set cursorline
+" Don't highlight it's line number
+highlight! link CursorLineNr LineNr
+
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
