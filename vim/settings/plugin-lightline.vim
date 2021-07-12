@@ -31,7 +31,13 @@ let g:lightline.mode_map = {
 
 
 function! MyReadonly()
-  return &ft !~? 'help\|fugitive' && &readonly ? "\ue0a2" : ''
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "\ue0a2"
+  else
+    return ""
+  endif
 endfunction
 
 function! MyFugitive()
