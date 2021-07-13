@@ -40,3 +40,8 @@ set guioptions-=L
 " Disable the macvim toolbar
 set guioptions-=T
 
+" Set cursor line
+set cursorline
+" Don't highlight cursor line number
+highlight! link CursorLineNr LineNr
+
