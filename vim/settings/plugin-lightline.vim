@@ -12,6 +12,20 @@ let g:lightline = {
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
       \ }
 
+let g:lightline.mode_map = {
+      \ 'n' : 'N',
+      \ 'i' : 'I',
+      \ 'R' : 'R',
+      \ 'v' : 'V',
+      \ 'V' : 'V-L',
+      \ "\<C-v>": 'V-B',
+      \ 'c' : 'CMD',
+      \ 's' : 'SELECT',
+      \ 'S' : 'S-L',
+      \ "\<C-s>": 'S-B',
+      \ 't': 'TERM',
+      \ }
+
 
 function! MyReadonly()
   if &filetype == "help"
