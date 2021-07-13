@@ -1,5 +1,6 @@
 Plug 'sheerun/vim-polyglot' " language pack for Vim
 Plug 'vim-syntastic/syntastic'
+Plug 'romainl/vim-devdocs' " Documentation
 
 "" SnipMate Files
 Plug 'MarcWeber/vim-addon-mw-utils'
