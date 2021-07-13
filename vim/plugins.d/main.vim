@@ -13,7 +13,7 @@ if empty(glob('~/.vim' . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source %
 endif
 
-set rtp+=~/.vim/plugins.d/ "Submodules
+set rtp+=~/.vim/plugins.d "Submodules
 
 " Directory for plugins
 call plug#begin('~/.vim/plugged')
@@ -28,12 +28,12 @@ runtime appearance.bundles
 runtime textobjects.bundles
 runtime search.bundles
 runtime project.bundles
-runtime vim-improvements.bundles
+runtime improvements.bundles
 
 " The plugins listed in ~/.vim/.local.bundles will be added here to
 " allow the user to add vim plugins to yadr without the need for a fork.
-if filereadable(expand("~/.yadr/vim/.local.bundles"))
-  source ~/.yadr/vim/.local.bundles
+if filereadable(expand("~/.vim/.local.bundles"))
+  source ~/.vim/.local.bundles
 endif
 
 " All of your Plugins must be added before the following line
