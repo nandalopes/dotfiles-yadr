@@ -18,3 +18,5 @@ Plug 'jparise/vim-graphql'
 "" Markdown
 Plug 'rhysd/vim-gfm-syntax' " Github flavored markdown
 Plug 'nelstrom/vim-markdown-preview'
+"" LaTeX
+Plug 'lervag/vimtex'
