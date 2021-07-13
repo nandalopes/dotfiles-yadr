@@ -1,12 +1,4 @@
-custom/zsh
-
 fonts/**/*.uuid
-vim/backups
-vim/view
-*un~
-vim/.netrwhist
-vim/tmp
-vim/spell
 
 # Vim custom settings
 vim/settings/**/*.vim
@@ -19,6 +11,13 @@ vim/plugged
 vim/autoload/plug.vim
 
 vim/sessions
+vim/backups
+vim/view
+*un~
+vim/.netrwhist
+vim/tmp
+vim/spell
+
 .netrwhist
 bin/subl
 tags

@@ -1,31 +1,33 @@
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neocomplete'
-Plug 'briandoll/change-inside-surroundings.vim'
-Plug 'godlygeek/tabular'
-Plug 'tomtom/tcomment_vim'
-Plug 'vim-scripts/camelcasemotion'
-Plug 'vim-scripts/matchit.zip'
-Plug 'kristijanhusak/vim-multiple-cursors'
-Plug 'Keithbsmiley/investigate.vim'
-Plug 'chrisbra/NrrwRgn'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'bogado/file-line'
-Plug 'mattn/webapi-vim'
-Plug 'sjl/gundo.vim'
-Plug 'tomtom/tlib_vim'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-sensible'             " Smart defaults that everyone should agree
+Plug 'tpope/vim-characterize'         " Show character codes
+Plug 'tpope/vim-eunuch'               " Shell file helpers and more
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'             " use for html, xml, latex
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'              " setup to latex
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
-Plug 'craigemery/vim-autotag'
+Plug 'tpope/vim-ragtag'
+
+Plug 'Raimondi/delimitMate'
+
+Plug 'AndrewRadev/splitjoin.vim'      " easy going refactors
+" Plug 'tommcdo/vim-lion'               " align things
+" Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'        " align things
+
+Plug 'mbbill/undotree'
+" Plug 'kristijanhusak/vim-multiple-cursors'
+Plug 'moll/vim-bbye'                  " Close and wipe buffers, but keep windows
+Plug 'editorconfig/editorconfig-vim'  " Make vim aware of project lints
+
+Plug 'chaoren/vim-wordmotion'         " CamelCase wise and another motions
+
 Plug 'vim-scripts/YankRing.vim'
-Plug 'vim-scripts/AnsiEsc.vim'
-Plug 'vim-scripts/lastpos.vim'
-Plug 'vim-scripts/sudo.vim'
-Plug 'goldfeld/ctrlr.vim'
-Plug 'editorconfig/editorconfig-vim'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+if !has('nvim')
+  Plug 'Shougo/vimproc.vim', {'do': 'make'}
+endif
 

@@ -1,7 +1,6 @@
-Plug 'chrisbra/color_highlight'
-Plug 'itchyny/lightline.vim'    " Status line
-Plug 'jby/tmux.vim'             " tmux.conf syntax
-Plug 'zakj/vim-showmarks'
+Plug 'itchyny/lightline.vim'     " Status line
+Plug 'chrisbra/Colorizer'        " Show colors by code
+" Plug 'zakj/vim-showmarks'
 
 " Required for Gblame in terminal vim
 Plug 'godlygeek/csapprox'

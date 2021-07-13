@@ -1,3 +1,6 @@
+nmap <Space> <Plug>SneakForward
+
+"" EasyMotion
 " These keys are easier to type than the default set
 " We exclude semicolon because it's hard to read and
 " i and l are too easy to mistake for each other slowing

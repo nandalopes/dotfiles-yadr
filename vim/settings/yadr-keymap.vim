@@ -1,12 +1,9 @@
 " ========================================
 " General vim sanity improvements
 " ========================================
-"
-"
-" alias yw to yank the entire word 'yank inner word'
-" even if the cursor is halfway inside the word
-" FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap <Leader>yw yiww
+
+"Shift-tab to insert a hard tab
+imap <silent> <S-Tab> <C-v><Tab>
 
 " ,ow = 'overwrite word', replace a word with what's in the yank buffer
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
@@ -14,9 +11,6 @@ nnoremap <Leader>ow "_diwhp
 
 "make Y consistent with C and D
 nnoremap Y y$
-function! YRRunAfterMaps()
-  nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
-endfunction
 
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
@@ -71,19 +65,7 @@ nnoremap <Leader>. '.
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
 " put the cursor right after the quote
-imap <C-a> <esc>wa
-
-" ==== NERD tree
-" Open the project tree and expose current file in the nerdtree with Ctrl-\
-" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
-function! OpenNerdTree()
-  if &modifiable && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-  else
-    NERDTreeToggle
-  endif
-endfunction
-nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
+imap <C-a> <Esc>wa
 
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
@@ -153,12 +135,6 @@ noremap <Leader>hl :set hlsearch! hlsearch?<CR>
 " swap them: http://items.sjbach.com/319/configuring-vim-right
 nnoremap ' `
 nnoremap ` '
-
-" ============================
-" SplitJoin plugin
-" ============================
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
 
 " Get the current highlight group. Useful for then remapping the color
 map <Leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>

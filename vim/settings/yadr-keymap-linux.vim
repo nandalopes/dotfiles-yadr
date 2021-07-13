@@ -43,10 +43,6 @@ autocmd FileType rspec map <buffer> \k {
 autocmd FileType javascript map <buffer> \j }
 autocmd FileType javascript map <buffer> \k {
 
-" ,/ to toggle comments
-map <Leader>/ :TComment<CR>
-imap <Leader>/ <Esc>:TComment<CR>i
-
 " Use Alt- numbers to pick the tab you want
 map <silent> <A-1> :tabn 1<cr>
 map <silent> <A-2> :tabn 2<cr>
