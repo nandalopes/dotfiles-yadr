@@ -6,12 +6,29 @@ nmap sk :SplitjoinJoin<cr>
 
 
 " ,/ to toggle comments
-map <Leader>/ :Commentary<CR>
-imap <Leader>/ <Esc>:Commentary<CR>i
+if LINUX()
+  map <Leader>/ :Commentary<CR>
+  imap <Leader>/ <Esc>:Commentary<CR>i
+else
+  map <D-/> :Commentary<CR>
+  imap <D-/> <Esc>:Commentary<CR>i
+endif
 
 
 " Close buffer with bbye-vim
 nnoremap Q :Bdelete<CR>
+
+" ============================
+" Tabularize - alignment
+" ============================
+" Hit ,A then type a character you want to align by
+" if LINUX()
+"   nmap <Leader>A :Tabularize /
+"   vmap <Leader>A :Tabularize /
+" else
+"   nmap <D-A> :Tabularize /
+"   vmap <D-A> :Tabularize /
+" endif
 
 
 " Unimpaired configuration
