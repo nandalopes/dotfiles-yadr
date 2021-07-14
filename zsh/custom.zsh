@@ -14,3 +14,12 @@ alias rm='nocorrect rm'
 autoload -U zmv
 alias zmv="noglob zmv -W"
 
+### fix linux prompt
+# Preview all with `prompt -p`
+# Options: adam2 giddie pure steeef elite2 elite restore redhat skwp suse
+case "$TERM" in
+  linux)
+    prompt giddie
+    ;;
+esac
+

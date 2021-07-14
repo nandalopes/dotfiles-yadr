@@ -1,15 +1,3 @@
-### fix linux prompt
-# Preview all with `prompt -p`
-# Options: adam2 giddie pure steeef elite2 elite restore redhat skwp suse
-
-case "$TERM" in
-  # xterm*)
-  #   ;;
-  linux)
-    zstyle ':prezto:module:prompt' theme 'giddie'
-    ;;
-esac
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
