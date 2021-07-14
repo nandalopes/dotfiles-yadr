@@ -283,6 +283,12 @@ def install_prezto
   run %{ mkdir -p $HOME/.zsh.after }
   run %{ mkdir -p $HOME/.zsh.prompts }
 
+  puts
+  puts "Copying Powerlevel10 theme"
+  run %{
+    cp -vf $PWD/zsh/prezto-themes/prompt_powerlevel10k_setup $HOME/.p10k.zsh
+  }
+
   if "#{ENV['SHELL']}".include? 'zsh' then
     puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
   else
