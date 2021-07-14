@@ -5,7 +5,6 @@
 " it's preconfigured as desidered (under the settings/ folder)
 
 " Status line colorscheme
-let g:lightline.colorscheme='solarized'
+let g:lightline.colorscheme='gruvbox'
 
-colorscheme solarized
-
+colorscheme gruvbox
