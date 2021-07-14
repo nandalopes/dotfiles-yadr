@@ -50,8 +50,24 @@ POWERLEVEL9K_ASDF_RUST_SHOW_ON_UPGLOB='Cargo.*|*.rs'
 POWERLEVEL9K_ASDF_PHP_SHOW_ON_UPGLOB='*.php'
 POWERLEVEL9K_ASDF_YARN_SHOW_ON_UPGLOB='package.json|yarn.lock'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs newline)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(direnv command_execution_time asdf time newline)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  status
+  context
+  dir
+  vcs
+  newline
+  prompt_char
+)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+  direnv
+  command_execution_time
+  asdf
+  background_jobs
+  time
+  vim_shell
+  ranger
+  newline
+)
 
 # POWERLEVEL9K_EXECUTION_TIME_ICON='\u23F1'
 
