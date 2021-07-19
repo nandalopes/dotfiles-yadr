@@ -19,12 +19,19 @@ if has("gui_running")
 else
   let g:CSApprox_loaded = 1
 
+  if has("termguicolors")
+    set termguicolors
+  end
+
   " For people using a terminal that is not Solarized
   if exists("g:yadr_using_unsolarized_terminal")
     let g:solarized_termcolors=256
     let g:solarized_termtrans=1
   end
 endif
+
+" Enable mouse
+set mouse+=a
 
 " Disable the scrollbars (NERDTree)
 set guioptions-=r
