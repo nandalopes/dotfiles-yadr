@@ -32,9 +32,11 @@ set nowritebackup
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-if has('persistent_undo') && isdirectory(expand('~').'/.vim/backups')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
+if has('persistent_undo')
+  if !isdirectory(expand('~').'/.cache/vim/backups')
+    silent !mkdir -p ~/.cache/vim/backups > /dev/null 2>&1
+  endif
+  set undodir=~/.cache/vim/backups
   set undofile
 endif
 
