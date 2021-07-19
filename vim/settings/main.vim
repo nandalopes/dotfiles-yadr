@@ -40,13 +40,17 @@ endif
 
 " ================ Indentation ======================
 
-set autoindent
-set smartindent
+set autoindent    " Minimal automatic indenting for any filetype
+set smartindent   " Do smart autoindenting when starting a new line
+
+"" Tabs. May be overridden by autocmd rules
+" http://romainl.github.io/the-patient-vimmer/0.html#_problem_6_huge_tabs
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
+set shiftwidth=2  " Arrow function (>>) creates 2 spaces
+set softtabstop=2 " Number of spaces per Tab - if negative, will use shiftwidth
+set tabstop=2     " Tab equal 2 spaces (default 8)
+set expandtab     " Use spaces instead of a tab charater on TAB
+set shiftround    " Shift to the next round tab stop. Aka When at 3 spaces, hit >> to go to 4, not 5 if your shiftwidth is set to 2.
 
 " Some file types use real tabs
 au FileType {make} set noexpandtab shiftwidth=4
@@ -95,10 +99,10 @@ set sidescroll=1
 
 " ================ Search ===========================
 
-set incsearch       " Find the next match as we type the search
-set hlsearch        " Highlight searches by default
-set ignorecase      " Ignore case when searching...
-set smartcase       " ...unless we type a capital
+set incsearch   " Find the next match as we type the search
+set hlsearch    " Highlight searches by default
+set ignorecase  " Ignore case when searching...
+set smartcase   " ...unless we type a capital
 
 " ================ Formatting =======================
 set formatoptions+=j " Delete comment character when joining commented lines
